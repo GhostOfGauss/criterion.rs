@@ -518,13 +518,9 @@ impl<M: Measurement> Criterion<M> {
     /// A bigger sample should yield more accurate results if paired with a sufficiently large
     /// measurement time.
     ///
-    /// Sample size must be at least 10.
-    ///
-    /// # Panics
-    ///
-    /// Panics if n < 10
+    /// Sample size can be anything you want.
     pub fn sample_size(mut self, n: usize) -> Criterion<M> {
-        assert!(n >= 10);
+        // assert!(n >= 10);
 
         self.config.sample_size = n;
         self
